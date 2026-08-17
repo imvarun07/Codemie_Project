@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Catalog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Book Catalog</h1>
+
+    <form id="add-form">
+      <input type="text" id="title" placeholder="Title" required />
+      <input type="text" id="author" placeholder="Author" required />
+      <input type="number" id="year" placeholder="Year" min="1" max="2099" required />
+      <button type="submit">Add Book</button>
+    </form>
+
+    <div id="error" class="error hidden"></div>
+
+    <table id="books-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Year</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="books-body"></tbody>
+    </table>
+
+    <p id="empty" class="empty hidden">No books yet. Add one above!</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
