@@ -38,7 +38,15 @@
     { "head": "feature/EPMCDMETST-60454", "base": "feature/EPMCDMETST-60453", "url": "https://github.com/imvarun07/Codemie_Project/pull/8" }
   ],
   "confluence": {
-    "designParentPageUrl": "",
-    "pages": {}
+    "designParentPageUrl": "https://imvarun07.atlassian.net/wiki/spaces/ATC/pages/8028161/Capstone+Codemie_Project+Design+run-20260817-1537",
+    "pages": {
+      "FRD": "https://imvarun07.atlassian.net/wiki/spaces/ATC/pages/8060929/FRD",
+      "Architecture": "https://imvarun07.atlassian.net/wiki/spaces/ATC/pages/7798835/Architecture",
+      "HLD": "https://imvarun07.atlassian.net/wiki/spaces/ATC/pages/7733299/HLD",
+      "LLD": "https://imvarun07.atlassian.net/wiki/spaces/ATC/pages/7667752/LLD",
+      "Wireframes": "https://imvarun07.atlassian.net/wiki/spaces/ATC/pages/8060981/Wireframes",
+      "Test Strategy": "https://imvarun07.atlassian.net/wiki/spaces/ATC/pages/8061015/Test+Strategy",
+      "Local Runbook": "https://imvarun07.atlassian.net/wiki/spaces/ATC/pages/7929864/Local+Runbook"
+    }
   }
 }
