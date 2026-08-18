@@ -54,8 +54,9 @@ form.addEventListener('submit', async e => {
   });
 
   if (!res.ok) {
-    const err = await res.json();
-    showError(err.error || 'Failed to add book');
+    const body = await res.json();
+    const msg = body.error?.message || (typeof body.error === 'string' ? body.error : 'Failed to add book');
+    showError(msg);
     return;
   }
 
