@@ -1,0 +1,25 @@
+{
+  "name": "codemie_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imvarun07/Codemie_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/imvarun07/Codemie_Project/issues"
+  },
+  "homepage": "https://github.com/imvarun07/Codemie_Project#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1"
+  }
+}
