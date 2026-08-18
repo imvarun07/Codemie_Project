@@ -1,0 +1,44 @@
+{
+  "app": {
+    "name": "Codemie_Project",
+    "repo": {
+      "provider": "github",
+      "url": "https://github.com/imvarun07/Codemie_Project"
+    }
+  },
+  "run": {
+    "id": "run-20260817-1537",
+    "label": "capstone-run-20260817-1537",
+    "status": "in-progress",
+    "createdAt": "2026-08-17"
+  },
+  "jira": {
+    "projectKey": "EPMCDMETST",
+    "anchorKey": "EPMCDMETST-60444",
+    "epics": ["EPMCDMETST-60445", "EPMCDMETST-60446"],
+    "stories": [
+      "EPMCDMETST-60447",
+      "EPMCDMETST-60448",
+      "EPMCDMETST-60449",
+      "EPMCDMETST-60450",
+      "EPMCDMETST-60451",
+      "EPMCDMETST-60452",
+      "EPMCDMETST-60453",
+      "EPMCDMETST-60454"
+    ]
+  },
+  "pullRequests": [
+    { "head": "feature/EPMCDMETST-60447", "base": "main", "url": "https://github.com/imvarun07/Codemie_Project/pull/1" },
+    { "head": "feature/EPMCDMETST-60448", "base": "feature/EPMCDMETST-60447", "url": "https://github.com/imvarun07/Codemie_Project/pull/2" },
+    { "head": "feature/EPMCDMETST-60449", "base": "feature/EPMCDMETST-60448", "url": "https://github.com/imvarun07/Codemie_Project/pull/3" },
+    { "head": "feature/EPMCDMETST-60450", "base": "feature/EPMCDMETST-60449", "url": "https://github.com/imvarun07/Codemie_Project/pull/4" },
+    { "head": "feature/EPMCDMETST-60451", "base": "feature/EPMCDMETST-60450", "url": "https://github.com/imvarun07/Codemie_Project/pull/5" },
+    { "head": "feature/EPMCDMETST-60452", "base": "feature/EPMCDMETST-60451", "url": "https://github.com/imvarun07/Codemie_Project/pull/6" },
+    { "head": "feature/EPMCDMETST-60453", "base": "feature/EPMCDMETST-60452", "url": "https://github.com/imvarun07/Codemie_Project/pull/7" },
+    { "head": "feature/EPMCDMETST-60454", "base": "feature/EPMCDMETST-60453", "url": "https://github.com/imvarun07/Codemie_Project/pull/8" }
+  ],
+  "confluence": {
+    "designParentPageUrl": "",
+    "pages": {}
+  }
+}
