@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const Database = require('better-sqlite3');
 const { z } = require('zod');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
 
 const DB_FILE = process.env.DATABASE_FILE || path.join(__dirname, 'books.sqlite');
 const db = new Database(DB_FILE);
@@ -39,7 +41,10 @@ function notFound(message) {
 }
 
 const app = express();
-app.use(express.json());
+app.disable('x-powered-by');
+app.use(helmet());
+app.use(rateLimit({ windowMs: 60_000, max: 100, standardHeaders: true, legacyHeaders: false }));
+app.use(express.json({ limit: '10kb' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/books', (req, res) => {
