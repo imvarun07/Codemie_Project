@@ -38,15 +38,15 @@
     { "head": "feature/EPMCDMETST-60454", "base": "feature/EPMCDMETST-60453", "url": "https://github.com/imvarun07/Codemie_Project/pull/8" }
   ],
   "confluence": {
-    "designParentPageUrl": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/7962639/Capstone+Codemie_Project+Design+run-20260817-1537",
+    "designParentPageUrl": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/9371649/Capstone+Codemie_Project+Design+run-20260817-1537",
     "pages": {
-      "FRD": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/7733347/FRD",
-      "Architecture": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/8355841/Architecture",
-      "HLD": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/7962691/HLD",
-      "LLD": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/7995401/LLD",
-      "Wireframes": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/8192008/Wireframes",
-      "Test Strategy": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/7995433/Test+Strategy",
-      "Local Runbook": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/8224770/Local+Runbook"
+      "FRD": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/9404417/FRD",
+      "Architecture": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/9273352/Architecture",
+      "HLD": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/9306120/HLD",
+      "LLD": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/8781883/LLD",
+      "Wireframes": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/9404467/Wireframes",
+      "TestStrategy": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/9437185/Test+Strategy",
+      "LocalRunbook": "https://imvarun07.atlassian.net/wiki/spaces/CODEMIE/pages/9469953/Local+Runbook"
     }
   }
 }
