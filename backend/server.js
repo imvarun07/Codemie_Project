@@ -1,25 +1,26 @@
 const express = require('express');
-const fs = require('fs');
 const path = require('path');
+const Database = require('better-sqlite3');
+
+const DB_FILE = process.env.DATABASE_FILE || path.join(__dirname, 'books.sqlite');
+const db = new Database(DB_FILE);
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS books (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    author TEXT NOT NULL,
+    year INTEGER NOT NULL
+  )
+`);
 
 const app = express();
-const DB_FILE = path.join(__dirname, 'books.json');
-
-function readDB() {
-  try { return JSON.parse(fs.readFileSync(DB_FILE, 'utf8')); }
-  catch { return { nextId: 1, books: [] }; }
-}
-
-function writeDB(data) {
-  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
-}
-
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/books', (req, res) => {
-  const { books } = readDB();
-  res.json([...books].reverse());
+  const books = db.prepare('SELECT * FROM books ORDER BY id ASC').all();
+  res.json(books);
 });
 
 app.post('/api/books', (req, res) => {
@@ -27,20 +28,16 @@ app.post('/api/books', (req, res) => {
   if (!title || !author || !year) {
     return res.status(400).json({ error: 'title, author, and year are required' });
   }
-  const db = readDB();
-  const book = { id: db.nextId++, title, author, year: Number(year) };
-  db.books.push(book);
-  writeDB(db);
+  const stmt = db.prepare('INSERT INTO books (title, author, year) VALUES (?, ?, ?)');
+  const info = stmt.run(title, author, Number(year));
+  const book = db.prepare('SELECT * FROM books WHERE id = ?').get(info.lastInsertRowid);
   res.status(201).json(book);
 });
 
 app.delete('/api/books/:id', (req, res) => {
   const id = Number(req.params.id);
-  const db = readDB();
-  const index = db.books.findIndex(b => b.id === id);
-  if (index === -1) return res.status(404).json({ error: 'Book not found' });
-  db.books.splice(index, 1);
-  writeDB(db);
+  const info = db.prepare('DELETE FROM books WHERE id = ?').run(id);
+  if (info.changes === 0) return res.status(404).json({ error: 'Book not found' });
   res.status(204).end();
 });
 
