@@ -34,6 +34,19 @@ app.post('/api/books', (req, res) => {
   res.status(201).json(book);
 });
 
+app.put('/api/books/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const { title, author, year } = req.body;
+  if (!title || !author || !year) {
+    return res.status(400).json({ error: 'title, author, and year are required' });
+  }
+  const info = db.prepare('UPDATE books SET title = ?, author = ?, year = ? WHERE id = ?')
+    .run(title, author, Number(year), id);
+  if (info.changes === 0) return res.status(404).json({ error: 'Book not found' });
+  const book = db.prepare('SELECT * FROM books WHERE id = ?').get(id);
+  res.json(book);
+});
+
 app.delete('/api/books/:id', (req, res) => {
   const id = Number(req.params.id);
   const info = db.prepare('DELETE FROM books WHERE id = ?').run(id);
